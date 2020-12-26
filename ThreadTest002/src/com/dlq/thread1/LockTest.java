@@ -1,5 +1,6 @@
 package com.dlq.thread1;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -37,13 +38,7 @@ class Window implements Runnable{
                 lock.lock();
 
                 if (ticket>0){
-
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
+                    try { TimeUnit.MILLISECONDS.sleep(100); } catch (InterruptedException e) { e.printStackTrace(); }
                     System.out.println(Thread.currentThread().getName()+": 售票，票号为："+ticket);
                     ticket--;
                 }else {

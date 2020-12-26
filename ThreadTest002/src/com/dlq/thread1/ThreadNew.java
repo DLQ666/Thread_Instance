@@ -2,7 +2,6 @@ package com.dlq.thread1;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 /**
@@ -29,7 +28,7 @@ class NumThread implements Callable<Integer>{
         int sum = 0;
         for (int i = 1; i <= 100; i++) {
             if (i % 2 == 0) {
-                System.out.println(i);
+                System.out.println(Thread.currentThread().getName()+":"+i);
                 sum += i;
             }
         }
@@ -45,7 +44,7 @@ public class ThreadNew {
         FutureTask<Integer> futureTask = new FutureTask<>(numThread);
 
         //5、将FutureTask的对象作为参数传递到Thread类的构造器中，创建Thread对象，并调用start()
-        new Thread(futureTask).start();
+        new Thread(futureTask,"A").start();
 
         try {
             //6、如果对call()方法的返回值感兴趣，就可以获取Callable接口实现类中call()的返回值

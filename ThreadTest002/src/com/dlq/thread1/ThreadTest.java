@@ -32,7 +32,7 @@ public class ThreadTest {
                     s2.append("1");
 
 //                    try {
-//                        sleep(100);
+//                        sleep(1);
 //                    } catch (InterruptedException e) {
 //                        e.printStackTrace();
 //                    }
@@ -62,7 +62,7 @@ public class ThreadTest {
                     s2.append("3");
 
 //                    try {
-//                        Thread.sleep(100);
+//                        Thread.sleep(2);
 //                    } catch (InterruptedException e) {
 //                        e.printStackTrace();
 //                    }

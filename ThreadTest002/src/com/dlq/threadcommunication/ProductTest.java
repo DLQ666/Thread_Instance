@@ -75,11 +75,11 @@ class Producer implements Runnable { //生产者
 
         while (true) {
 
-            try {
+            /*try {
                 Thread.sleep(5);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
 
             clerk.produceProduct();
         }
@@ -99,11 +99,11 @@ class Consumer implements Runnable{ //消费者
 
         while (true){
 
-            try {
+            /*try {
                 Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
 
             clerk.consumeProduct();
         }
@@ -117,7 +117,9 @@ public class ProductTest {
         Producer p1 = new Producer(clerk);
 
         Thread t1 = new Thread(p1);
+        Thread t4 = new Thread(p1);
         t1.setName("生产者1");
+        t4.setName("生产者2");
 
         Consumer c1 = new Consumer(clerk);
         Thread t2 = new Thread(c1);
